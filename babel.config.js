@@ -1,10 +1,9 @@
 const presets = [
   [
-    "@babel/env",
+    "@babel/preset-env",
     {
       targets: {
         "browsers": ["last 3 versions", "IE >= 11", "iOS >= 9"],
-        // "chrome": "1"
       },
       useBuiltIns: "usage",
     },
