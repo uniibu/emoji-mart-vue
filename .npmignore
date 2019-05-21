@@ -11,3 +11,6 @@ stats.json
 report.html
 babel.config.js
 Session.vim
+src/
+scripts/
+travis.yml

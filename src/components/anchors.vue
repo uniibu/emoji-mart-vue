@@ -4,7 +4,7 @@
   <span
     v-for="category in categories"
     :key="category.id"
-    :class="{ 'emoji-mart-anchor': true, 'emoji-mart-anchor-selected': category.id == activeCategory.id }"
+    :class="{ 'emoji-mart-anchor': true, 'emoji-mart-anchor-selected' : category.id == activeCategory.id }"
     :style="{ 'color': (category.id == activeCategory.id ? color : '') }"
     :data-title="i18n.categories[category.id]"
     @click="$emit('click', category)">

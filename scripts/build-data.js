@@ -1,7 +1,5 @@
 const build = require('./build')
-const sets = ['apple', 'emojione', 'facebook', 'google', 'messenger', 'twitter']
-
-build({ output: 'data/all.json' })
+const sets = ['messenger']
 
 sets.forEach((set) => {
   build({

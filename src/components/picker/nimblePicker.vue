@@ -48,10 +48,10 @@
       :emit-update="true"
       @update="onScrollUpdate"
     >
-      <template slot-scope="{ item, active, index }">
+      <template v-slot="{ item, index, active }">
         <DynamicScrollerItem :item="item" :active="active" :data-index="index">
           <category
-            v-show="item.show"
+            v-if="active"
             ref="categories"
             :key="item.category.id"
             :data="item.data"
@@ -104,7 +104,6 @@ import Preview from '../preview'
 import Search from '../search'
 
 import { DynamicScroller, DynamicScrollerItem } from 'vue-virtual-scroller'
-// import 'vue-virtual-scroller/dist/vue-virtual-scroller.css'
 
 const I18N = {
   search: 'Search',
@@ -173,9 +172,7 @@ export default {
         return {
           id: id++,
           category: category,
-          show:
-            !this.searchEmojis &&
-            (this.infiniteScroll || category == this.activeCategory),
+          show: !this.searchEmojis && (this.infiniteScroll || category == this.activeCategory),
           mergedI18n: this.mergedI18n,
           data: this.data,
           emojisLength: category.emojis.length,

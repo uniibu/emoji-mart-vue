@@ -15,7 +15,7 @@ var categories = [
   ['Flags', 'flags'],
 ]
 
-var sets = ['apple', 'emojione', 'facebook', 'google', 'messenger', 'twitter']
+var sets = ['messenger']
 
 module.exports = (options) => {
   delete require.cache[require.resolve('emoji-datasource')]

@@ -11,6 +11,7 @@
       :data-title="emojiObject.short_name"
       :title="emojiView.title"
       class="emoji-mart-emoji"
+      :key="emojiObject.short_name"
       @mouseenter="emojiProps.onEnter(emojiView.getEmoji())"
       @mouseleave="emojiProps.onLeave(emojiView.getEmoji())"
       @click="emojiProps.onClick(emojiView.getEmoji())">
