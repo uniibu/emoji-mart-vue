@@ -44,12 +44,14 @@
       ref="dynScroller"
       :items="scrollerCategories"
       :min-item-size="60"
+      :buffer="50"
       class="scroller"
       :emit-update="true"
       @update="onScrollUpdate"
     >
       <template v-slot="{ item, index, active }">
         <DynamicScrollerItem :item="item" :active="active" :data-index="index">
+          <keep-alive>
           <category
             v-if="active"
             ref="categories"
@@ -61,6 +63,7 @@
             :emojis="item.category.emojis"
             :emoji-props="item.emojiProps"
           />
+          </keep-alive>
         </DynamicScrollerItem>
       </template>
     </DynamicScroller>
@@ -93,7 +96,6 @@
 </template>
 
 <script>
-import '../../vendor/raf-polyfill'
 import store from '../../utils/store'
 import frequently from '../../utils/frequently'
 import { deepMerge, measureScrollbar } from '../../utils'

@@ -2703,10 +2703,10 @@ elliptic@^6.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.0"
 
-emoji-datasource@4.1.0:
+emoji-datasource-google@^4.1.0:
   version "4.1.0"
-  resolved "https://registry.yarnpkg.com/emoji-datasource/-/emoji-datasource-4.1.0.tgz#b44557f78a2dfac2f350393391b170a567ec28ad"
-  integrity sha1-tEVX94ot+sLzUDkzkbFwpWfsKK0=
+  resolved "https://registry.yarnpkg.com/emoji-datasource-google/-/emoji-datasource-google-4.1.0.tgz#d69be74d48c76ee2bb9fcb4e7920f27fa12dde9e"
+  integrity sha1-1pvnTUjHbuK7n8tOeSDyf6Et3p4=
 
 emojilib@^2.2.1:
   version "2.4.0"

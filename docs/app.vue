@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import data from '../data/messenger.json'
+import data from '../data/all.json'
 import { NimblePicker, EmojiIndex } from '../src'
 import '../css/emoji-mart.css'
 
@@ -109,7 +109,7 @@ export default {
       let emoji = index.findEmoji(':smile:')
       // Note, that position in the emoji sheet is calculated by
       // `emoji` object
-      let style = `background-position: ${emoji.getPosition()}; background-image: url(https://unpkg.com/emoji-datasource-emojione@4.0.4/img/emojione/sheets-256/64.png); width: 24px; height: 24px; display: inline-block; background-size: 5200%`
+      let style = `background-position: ${emoji.getPosition()}; background-image: url(https://unpkg.com/emoji-datasource-google@4.0.4/img/google/sheets-256/64.png); width: 24px; height: 24px; display: inline-block; background-size: 5200%`
       return `<div class='emoji' style="${style}"></div>`
     },
     santaEmojiObject() {

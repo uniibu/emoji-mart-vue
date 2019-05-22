@@ -26,8 +26,7 @@ module.exports = Object.assign(
           commonjs: 'vue',
           amd: 'vue',
         },
-      },
-      /^.*data\/.*\.json$/,
+      }
     ],
 
     module: {
@@ -64,7 +63,7 @@ module.exports = Object.assign(
     },
 
     resolve: {
-      extensions: ['.vue', '.js', '.json'],
+      extensions: ['.vue', '.js'],
       /**
        * Note: this is a hack to make path to json files same in
        * the original source and in the bundle.
@@ -82,16 +81,13 @@ module.exports = Object.assign(
        * leaves packaging to the application that uses the component.
        * See https://github.com/missive/emoji-mart/blob/master/package.json.
        **/
-      alias: {
-        '../data': path.resolve(__dirname, '../data/'),
-      },
     },
 
     plugins: [
       new webpack.DefinePlugin({
         EMOJI_DATASOURCE_VERSION: `'${
-          pack.devDependencies['emoji-datasource']
-        }'`,
+          pack.devDependencies['emoji-datasource-google']
+          }'`,
       }),
       new VueLoaderPlugin(),
     ],
@@ -100,14 +96,14 @@ module.exports = Object.assign(
   },
   !PROD
     ? {
-        mode: 'development',
-        devtool: 'inline-source-map',
-        watch: true,
-        devServer: {
-          inline: true,
-        },
-      }
-    : {
-        mode: 'production',
+      mode: 'development',
+      devtool: 'inline-source-map',
+      watch: true,
+      devServer: {
+        inline: true,
       },
+    }
+    : {
+      mode: 'production',
+    },
 )

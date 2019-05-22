@@ -15,11 +15,11 @@ var categories = [
   ['Flags', 'flags'],
 ]
 
-var sets = ['messenger']
+var sets = ['google']
 
 module.exports = (options) => {
-  delete require.cache[require.resolve('emoji-datasource')]
-  var emojiData = require('emoji-datasource')
+  delete require.cache[require.resolve('emoji-datasource-google')]
+  var emojiData = require('emoji-datasource-google')
 
   var data = { compressed: true, categories: [], emojis: {}, aliases: {} },
     categoriesIndex = {}
@@ -44,6 +44,9 @@ module.exports = (options) => {
 
     if (!datum.category) {
       throw new Error('“' + datum.short_name + '” doesn’t have a category')
+    }
+    if(datum.obsoletes || datum.obsoleted_by) {
+      return;
     }
 
     if (options.sets) {
@@ -104,6 +107,7 @@ module.exports = (options) => {
     delete datum.image
     delete datum.category
     delete datum.sort_order
+    delete datum.skin_variations
 
     compress(datum)
   })
