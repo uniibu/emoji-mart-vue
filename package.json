@@ -30,7 +30,7 @@
   "devDependencies": {
     "@babel/core": "^7.18.6",
     "@babel/plugin-transform-runtime": "^7.18.6",
-    "@babel/preset-env": "^7.18.6",
+    "@babel/preset-env": "^7.19.4",
     "@size-limit/preset-big-lib": "^7.0.8",
     "@vue/test-utils": "^1.3.0",
     "@vue/vue2-jest": "^27.0.0",
